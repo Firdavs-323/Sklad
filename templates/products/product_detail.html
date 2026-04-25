@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ product.name }} - {% trans "Product Details" %}{% endblock %}
+
+{% block content %}
+<div class="animate-fade-in">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent px-0 pb-3" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-info text-decoration-none">{% trans "Home" %}</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'product_list' %}" class="text-info text-decoration-none">{% trans "Products" %}</a></li>
+            <li class="breadcrumb-item active text-light" aria-current="page">{{ product.name }}</li>
+        </ol>
+    </nav>
+
+    <div class="card" style="border-top: 4px solid #3b82f6;">
+        <div class="card-header bg-transparent border-bottom-0 pt-4 pb-2">
+            <h3 class="card-title mb-0 text-primary fw-bold" style="text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);">{{ product.name }}</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-light mb-3 fw-bold">ℹ️ {% trans "Product Information" %}</h5>
+                    <table class="table table-borderless text-muted">
+                        <tr>
+                            <td class="text-info w-25"><strong>{% trans "Name" %}:</strong></td>
+                            <td class="text-light">{{ product.name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-info"><strong>{% trans "Price" %}:</strong></td>
+                            <td class="text-light">${{ product.price }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-info align-middle"><strong>{% trans "Quantity" %}:</strong></td>
+                            <td>
+                                <span class="badge {% if product.quantity < 10 %}bg-danger{% elif product.quantity < 50 %}bg-warning text-dark{% else %}bg-success{% endif %} fs-6 rounded-pill px-3 py-2" style="box-shadow: 0 0 10px rgba(255,255,255,0.1);">
+                                    {{ product.quantity }}
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-info"><strong>{% trans "Category" %}:</strong></td>
+                            <td class="text-light">{{ product.category.name }}</td>
+                        </tr>
+                        {% if product.sku %}
+                        <tr>
+                            <td class="text-info"><strong>{% trans "SKU" %}:</strong></td>
+                            <td class="text-light">{{ product.sku }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if product.barcode %}
+                        <tr>
+                            <td class="text-info"><strong>{% trans "Barcode" %}:</strong></td>
+                            <td class="text-light">{{ product.barcode }}</td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-light mb-3 fw-bold">🔄 {% trans "Recent Transactions" %}</h5>
+                    <div class="list-group list-group-flush">
+                        {% for transaction in product.transactions.all|slice:":5" %}
+                        <div class="list-group-item bg-transparent border-light border-opacity-10">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
+                                <h6 class="mb-1 text-light fw-bold">
+                                    {% if transaction.transaction_type == 'IN' %}<span class="text-success">↑</span>{% else %}<span class="text-danger">↓</span>{% endif %}
+                                    {{ transaction.get_transaction_type_display|default:transaction.transaction_type }} - {{ transaction.quantity }}
+                                </h6>
+                                <small class="text-muted">{{ transaction.date|date:"M d, Y H:i" }}</small>
+                            </div>
+                            <p class="mb-1 text-muted small">{% trans "By" %}: <span class="text-info">{{ transaction.performed_by.username }}</span></p>
+                        </div>
+                        {% empty %}
+                        <div class="alert text-center p-3" style="background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2);">
+                            <span class="text-muted">{% trans "No transactions yet." %}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-transparent border-top-0 pb-4 d-flex gap-3">
+            {% if user.is_superuser or user.profile.role == 'admin' %}
+            <a href="{% url 'edit_product' product.pk %}" class="btn btn-outline-warning rounded-pill px-4">✏️ {% trans "Edit Product" %}</a>
+            <a href="{% url 'delete_product' product.pk %}" class="btn btn-outline-danger rounded-pill px-4">🗑️ {% trans "O'chirish" %}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

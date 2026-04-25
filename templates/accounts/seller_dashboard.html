@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Seller Dashboard" %}{% endblock %}
+
+{% block content %}
+<div class="animate-fade-in">
+    <h2 class="mb-4 text-info fw-bold">{% trans "Seller Dashboard" %}</h2>
+
+    <div class="row mb-5">
+        <div class="col-md-4 mb-3">
+            <div class="card p-4 text-center badge-neon">
+                <h4 class="text-muted">{% trans "Daily Sales (Income)" %}</h4>
+                <h2 class="text-success">${{ stats.daily.income|floatformat:2 }}</h2>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card p-4 text-center badge-neon">
+                <h4 class="text-muted">{% trans "Monthly Sales (Income)" %}</h4>
+                <h2 class="text-success">${{ stats.monthly.income|floatformat:2 }}</h2>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card p-4 text-center badge-neon">
+                <h4 class="text-muted">{% trans "Yearly Sales (Income)" %}</h4>
+                <h2 class="text-success">${{ stats.yearly.income|floatformat:2 }}</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card p-4 text-center">
+        <h4 class="text-light mb-3">{% trans "Quick Actions" %}</h4>
+        <div>
+            <a href="{% url 'product_list' %}" class="btn btn-primary me-2">{% trans "View Products" %}</a>
+            <a href="{% url 'category_list' %}" class="btn btn-outline-info">{% trans "View Categories" %}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

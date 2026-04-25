@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Kategoriyani tahrirlash" %}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center animate-fade-in">
+    <div class="col-md-6 col-lg-5">
+        <div class="card p-4">
+            <h2 class="text-center mb-4 text-info fw-bold">{% trans "Kategoriyani tahrirlash" %}</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label text-light">{{ field.label }}</label>
+                    <input type="text" class="form-control bg-dark text-light border-secondary {% if field.errors %}is-invalid{% endif %}" id="{{ field.id_for_label }}" name="{{ field.name }}" value="{{ field.value|default:'' }}">
+                    {% if field.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ field.errors.0 }}
+                        </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="d-grid mt-4 gap-2">
+                    <button type="submit" class="btn btn-primary fw-bold py-2">{% trans "Saqlash" %}</button>
+                    <a href="{% url 'category_list' %}" class="btn btn-outline-secondary py-2">{% trans "Bekor qilish" %}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

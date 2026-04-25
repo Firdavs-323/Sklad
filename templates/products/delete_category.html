@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Kategoriyani o'chirish" %}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center animate-fade-in">
+    <div class="col-md-6 col-lg-5">
+        <div class="card p-4 text-center border-danger" style="border-width: 2px;">
+            <h2 class="mb-4 text-danger fw-bold">⚠️ {% trans "Diqqat!" %}</h2>
+            <p class="text-light mb-4">
+                Siz rostdan ham <strong class="text-info">"{{ category.name }}"</strong> kategoriyasini o'chirmoqchimisiz?
+            </p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="d-grid gap-3">
+                    <button type="submit" class="btn btn-danger fw-bold py-2">{% trans "Ha, o'chirish" %}</button>
+                    <a href="{% url 'category_list' %}" class="btn btn-outline-secondary py-2">{% trans "Bekor qilish" %}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

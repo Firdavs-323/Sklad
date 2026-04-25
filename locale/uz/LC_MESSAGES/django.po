@@ -1,0 +1,228 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: you@example.com\n"
+"POT-Creation-Date: 2026-04-23 12:00+0500\n"
+"PO-Revision-Date: 2026-04-23 12:00+0500\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Warehouse Management System"
+msgstr "Omborxona Boshqaruvi Tizimi"
+
+msgid "Efficient inventory control and real-time monitoring"
+msgstr "Inventarizatsiyani samarali nazorat qilish va real vaqtda monitoring"
+
+msgid "Products"
+msgstr "Mahsulotlar"
+
+msgid "Manage your product inventory"
+msgstr "Mahsulotlar zaxirasini boshqaring"
+
+msgid "View Products"
+msgstr "Mahsulotlarni ko'rish"
+
+msgid "Transactions"
+msgstr "Tranzaksiyalar"
+
+msgid "Track incoming and outgoing movements"
+msgstr "Kirim va chiqim harakatlarini kuzatish"
+
+msgid "View Transactions"
+msgstr "Tranzaksiyalarni ko'rish"
+
+msgid "Reports"
+msgstr "Hisobotlar"
+
+msgid "Generate detailed analytics"
+msgstr "Batafsil tahlillarni yaratish"
+
+msgid "View Reports"
+msgstr "Hisobotlarni ko'rish"
+
+msgid "Quick Actions"
+msgstr "Tezkor amallar"
+
+msgid "Add New Product"
+msgstr "Yangi mahsulot qo'shish"
+
+msgid "Add Transaction"
+msgstr "Tranzaksiya qo'shish"
+
+msgid "Admin Panel"
+msgstr "Admin paneli"
+
+msgid "System Status"
+msgstr "Tizim holati"
+
+msgid "Database"
+msgstr "Ma'lumotlar bazasi"
+
+msgid "Connected"
+msgstr "Ulangan"
+
+msgid "API"
+msgstr "API"
+
+msgid "Active"
+msgstr "Faol"
+
+msgid "Telegram Bot"
+msgstr "Telegram Bot"
+
+msgid "Configuring"
+msgstr "Sozlanmoqda"
+
+msgid "Warehouse Management"
+msgstr "Omborxona boshqaruvi"
+
+msgid "Warehouse"
+msgstr "Omborxona"
+
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+msgid "Welcome"
+msgstr "Xush kelibsiz"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Login"
+msgstr "Kirish"
+
+msgid "Go"
+msgstr "O'tish"
+
+msgid "Price"
+msgstr "Narx"
+
+msgid "Quantity"
+msgstr "Miqdor"
+
+msgid "Category"
+msgstr "Kategoriya"
+
+msgid "SKU"
+msgstr "SKU"
+
+msgid "Barcode"
+msgstr "Shtrix-kod"
+
+msgid "View Details"
+msgstr "Tafsilotlarni ko'rish"
+
+msgid "No products found."
+msgstr "Mahsulotlar topilmadi."
+
+msgid "Add your first product"
+msgstr "Birinchi mahsulotingizni qo'shing"
+
+msgid "Add New Category"
+msgstr "Yangi kategoriya qo'shish"
+
+msgid "Edit"
+msgstr "Tahrirlash"
+
+msgid "No categories found."
+msgstr "Kategoriyalar topilmadi."
+
+msgid "Add your first category"
+msgstr "Birinchi kategoriyangizni qo'shing"
+
+msgid "Product Details"
+msgstr "Mahsulot tafsilotlari"
+
+msgid "Home"
+msgstr "Bosh sahifa"
+
+msgid "Product Information"
+msgstr "Mahsulot haqida ma'lumot"
+
+msgid "Name"
+msgstr "Nomi"
+
+msgid "Recent Transactions"
+msgstr "So'nggi tranzaksiyalar"
+
+msgid "By"
+msgstr "Tomonidan"
+
+msgid "No transactions yet."
+msgstr "Hozircha tranzaksiyalar yo'q."
+
+msgid "Edit Product"
+msgstr "Mahsulotni tahrirlash"
+
+msgid "Admin Dashboard"
+msgstr "Admin Boshqaruvi"
+
+msgid "Dashboard"
+msgstr "Boshqaruv"
+
+msgid "Daily Income"
+msgstr "Kunlik Daromad"
+
+msgid "Monthly Income"
+msgstr "Oylik Daromad"
+
+msgid "Yearly Income"
+msgstr "Yillik Daromad"
+
+msgid "Expenses"
+msgstr "Xarajatlar"
+
+msgid "Logout"
+msgstr "Chiqish"
+
+msgid "Register"
+msgstr "Ro'yxatdan o'tish"
+
+msgid "Login to Sklad"
+msgstr "Sklad-ga kirish"
+
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+msgid "Password"
+msgstr "Parol"
+
+msgid "Admin Secret Code (Optional)"
+msgstr "Admin maxfiy kodi (ixtiyoriy)"
+
+msgid "Don't have an account?"
+msgstr "Akkauntingiz yo'qmi?"
+
+msgid "Register here"
+msgstr "Shu yerda ro'yxatdan o'ting"
+
+msgid "Register as Seller"
+msgstr "Sotuvchi sifatida ro'yxatdan o'tish"
+
+msgid "Already have an account?"
+msgstr "Allaqachon akkauntingiz bormi?"
+
+msgid "Login here"
+msgstr "Shu yerda kiring"
+
+msgid "Daily Sales (Income)"
+msgstr "Kunlik Sotuvlar (Daromad)"
+
+msgid "Monthly Sales (Income)"
+msgstr "Oylik Sotuvlar (Daromad)"
+
+msgid "Yearly Sales (Income)"
+msgstr "Yillik Sotuvlar (Daromad)"
+
+msgid "Seller Dashboard"
+msgstr "Sotuvchi Boshqaruvi"
+
+msgid "Add Category"
+msgstr "Kategoriya qo'shish"
+
+msgid "Add Product"
+msgstr "Mahsulot qo'shish"

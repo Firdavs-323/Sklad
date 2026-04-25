@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Mahsulotni tahrirlash" %}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center animate-fade-in">
+    <div class="col-md-8 col-lg-6">
+        <div class="card p-4">
+            <h2 class="text-center mb-4 text-info fw-bold">{% trans "Mahsulotni tahrirlash" %}</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label text-light">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="text-danger mt-1">
+                            {{ field.errors.0 }}
+                        </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="d-grid mt-4 gap-2">
+                    <button type="submit" class="btn btn-primary fw-bold py-2">{% trans "Saqlash" %}</button>
+                    <a href="{% url 'product_detail' product.pk %}" class="btn btn-outline-secondary py-2">{% trans "Bekor qilish" %}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    select, input[type="text"], input[type="number"] {
+        background: rgba(30, 41, 59, 0.8) !important;
+        color: #e2e8f0 !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 8px;
+        padding: 8px 12px;
+        width: 100%;
+    }
+</style>
+{% endblock %}

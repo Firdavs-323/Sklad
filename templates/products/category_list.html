@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Categories" %} - {% trans "Warehouse Management" %}{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-5 animate-fade-in">
+    <h2 class="text-primary fw-bold" style="text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);">📂 {% trans "Categories" %}</h2>
+    {% if user.is_superuser or user.profile.role == 'admin' %}
+    <a href="{% url 'admin_dashboard' %}" class="btn btn-primary rounded-pill px-4">{% trans "Add New Category" %}</a>
+    {% endif %}
+</div>
+
+<div class="row">
+    {% for category in categories %}
+    <div class="col-md-4 mb-4 animate-fade-in-delayed" style="animation-delay: {{ forloop.counter0|add:1|default:1 }}00ms;">
+        <div class="card h-100" style="border-top: 3px solid #a855f7;">
+            <div class="card-body text-center p-4">
+                <h4 class="card-title text-light fw-bold mb-3">{{ category.name }}</h4>
+                <p class="card-text text-muted mb-4">
+                    <strong class="text-info">{% trans "Products" %}:</strong> 
+                    <span class="badge bg-secondary rounded-pill ms-2">{{ category.products.count }}</span>
+                </p>
+                {% if user.is_superuser or user.profile.role == 'admin' %}
+                <div class="d-flex justify-content-center gap-2 mt-3">
+                    <a href="{% url 'edit_category' category.pk %}" class="btn btn-outline-purple rounded-pill px-4" style="border-color: #a855f7; color: #a855f7; transition: all 0.3s ease;">{% trans "Edit" %}</a>
+                    <a href="{% url 'delete_category' category.pk %}" class="btn btn-outline-danger rounded-pill px-4">{% trans "O'chirish" %}</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12 animate-fade-in">
+        <div class="alert alert-info text-center rounded p-4" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3);">
+            {% trans "No categories found." %} 
+            {% if user.is_superuser or user.profile.role == 'admin' %}
+            <a href="{% url 'admin_dashboard' %}" class="text-info fw-bold">{% trans "Add your first category" %}</a>.
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<style>
+    .btn-outline-purple:hover {
+        background-color: #a855f7 !important;
+        color: white !important;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+    }
+</style>
+{% endblock %}

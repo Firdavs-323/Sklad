@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Admin Dashboard" %}{% endblock %}
+
+{% block content %}
+<div class="animate-fade-in">
+    <h2 class="mb-4 text-info fw-bold">{% trans "Admin Dashboard" %}</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="row mb-5">
+        <div class="col-md-4 mb-3">
+            <div class="card p-4 text-center badge-neon">
+                <h4 class="text-muted">{% trans "Daily Income" %}</h4>
+                <h2 class="text-success">${{ stats.daily.income|floatformat:2 }}</h2>
+                <h6 class="text-danger">{% trans "Expenses" %}: ${{ stats.daily.expense|floatformat:2 }}</h6>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card p-4 text-center badge-neon">
+                <h4 class="text-muted">{% trans "Monthly Income" %}</h4>
+                <h2 class="text-success">${{ stats.monthly.income|floatformat:2 }}</h2>
+                <h6 class="text-danger">{% trans "Expenses" %}: ${{ stats.monthly.expense|floatformat:2 }}</h6>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card p-4 text-center badge-neon">
+                <h4 class="text-muted">{% trans "Yearly Income" %}</h4>
+                <h2 class="text-success">${{ stats.yearly.income|floatformat:2 }}</h2>
+                <h6 class="text-danger">{% trans "Expenses" %}: ${{ stats.yearly.expense|floatformat:2 }}</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card p-4 h-100">
+                <h3 class="mb-3 text-primary">{% trans "Add New Category" %}</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ category_form.non_field_errors }}
+                    {% for field in category_form %}
+                    <div class="mb-3">
+                        <label for="{{ field.id_for_label }}" class="form-label text-light">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="text-danger mt-1">{{ field.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" name="add_category" class="btn btn-primary w-100 mt-2">{% trans "Add Category" %}</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card p-4 h-100">
+                <h3 class="mb-3 text-primary">{% trans "Add New Product" %}</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ product_form.non_field_errors }}
+                    {% for field in product_form %}
+                    <div class="mb-3">
+                        <label for="{{ field.id_for_label }}" class="form-label text-light">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="text-danger mt-1">{{ field.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" name="add_product" class="btn btn-primary w-100 mt-2">{% trans "Add Product" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    select, input[type="text"], input[type="number"] {
+        background: rgba(30, 41, 59, 0.8) !important;
+        color: #e2e8f0 !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 8px;
+        padding: 8px 12px;
+        width: 100%;
+    }
+</style>
+{% endblock %}

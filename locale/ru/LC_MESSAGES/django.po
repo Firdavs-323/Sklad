@@ -1,0 +1,228 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: you@example.com\n"
+"POT-Creation-Date: 2026-04-23 12:00+0500\n"
+"PO-Revision-Date: 2026-04-23 12:00+0500\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Warehouse Management System"
+msgstr "Система Управления Складом"
+
+msgid "Efficient inventory control and real-time monitoring"
+msgstr "Эффективный контроль запасов и мониторинг в реальном времени"
+
+msgid "Products"
+msgstr "Товары"
+
+msgid "Manage your product inventory"
+msgstr "Управляйте запасами товаров"
+
+msgid "View Products"
+msgstr "Посмотреть товары"
+
+msgid "Transactions"
+msgstr "Транзакции"
+
+msgid "Track incoming and outgoing movements"
+msgstr "Отслеживайте входящие и исходящие движения"
+
+msgid "View Transactions"
+msgstr "Посмотреть транзакции"
+
+msgid "Reports"
+msgstr "Отчеты"
+
+msgid "Generate detailed analytics"
+msgstr "Генерация детальной аналитики"
+
+msgid "View Reports"
+msgstr "Посмотреть отчеты"
+
+msgid "Quick Actions"
+msgstr "Быстрые действия"
+
+msgid "Add New Product"
+msgstr "Добавить новый товар"
+
+msgid "Add Transaction"
+msgstr "Добавить транзакцию"
+
+msgid "Admin Panel"
+msgstr "Панель администратора"
+
+msgid "System Status"
+msgstr "Статус системы"
+
+msgid "Database"
+msgstr "База данных"
+
+msgid "Connected"
+msgstr "Подключено"
+
+msgid "API"
+msgstr "API"
+
+msgid "Active"
+msgstr "Активен"
+
+msgid "Telegram Bot"
+msgstr "Telegram Бот"
+
+msgid "Configuring"
+msgstr "Настраивается"
+
+msgid "Warehouse Management"
+msgstr "Управление складом"
+
+msgid "Warehouse"
+msgstr "Склад"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+msgid "Admin"
+msgstr "Админ"
+
+msgid "Login"
+msgstr "Войти"
+
+msgid "Go"
+msgstr "Перейти"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Quantity"
+msgstr "Количество"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "SKU"
+msgstr "Артикул"
+
+msgid "Barcode"
+msgstr "Штрих-код"
+
+msgid "View Details"
+msgstr "Посмотреть детали"
+
+msgid "No products found."
+msgstr "Товары не найдены."
+
+msgid "Add your first product"
+msgstr "Добавьте ваш первый товар"
+
+msgid "Add New Category"
+msgstr "Добавить новую категорию"
+
+msgid "Edit"
+msgstr "Изменить"
+
+msgid "No categories found."
+msgstr "Категории не найдены."
+
+msgid "Add your first category"
+msgstr "Добавьте вашу первую категорию"
+
+msgid "Product Details"
+msgstr "Детали товара"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Product Information"
+msgstr "Информация о товаре"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Recent Transactions"
+msgstr "Последние транзакции"
+
+msgid "By"
+msgstr "От"
+
+msgid "No transactions yet."
+msgstr "Пока нет транзакций."
+
+msgid "Edit Product"
+msgstr "Изменить товар"
+
+msgid "Admin Dashboard"
+msgstr "Панель администратора"
+
+msgid "Dashboard"
+msgstr "Панель"
+
+msgid "Daily Income"
+msgstr "Дневной доход"
+
+msgid "Monthly Income"
+msgstr "Месячный доход"
+
+msgid "Yearly Income"
+msgstr "Годовой доход"
+
+msgid "Expenses"
+msgstr "Расходы"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Register"
+msgstr "Регистрация"
+
+msgid "Login to Sklad"
+msgstr "Войти в Склад"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Admin Secret Code (Optional)"
+msgstr "Секретный код админа (необязательно)"
+
+msgid "Don't have an account?"
+msgstr "Нет аккаунта?"
+
+msgid "Register here"
+msgstr "Зарегистрируйтесь здесь"
+
+msgid "Register as Seller"
+msgstr "Зарегистрироваться как продавец"
+
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+msgid "Login here"
+msgstr "Войдите здесь"
+
+msgid "Daily Sales (Income)"
+msgstr "Дневные продажи (Доход)"
+
+msgid "Monthly Sales (Income)"
+msgstr "Месячные продажи (Доход)"
+
+msgid "Yearly Sales (Income)"
+msgstr "Годовые продажи (Доход)"
+
+msgid "Seller Dashboard"
+msgstr "Панель продавца"
+
+msgid "Add Category"
+msgstr "Добавить категорию"
+
+msgid "Add Product"
+msgstr "Добавить товар"
